@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class FileReader {
@@ -15,10 +18,11 @@ public class FileReader {
         this.path = Paths.get(filePath);
     }
 
-    public Stream<String> readFile(){
+    public List<String> readFile(){
+        List<String> list;
         try (Stream<String> stream = Files.lines(this.path)) {
-            return stream;
-
+            list = stream.collect(Collectors.toList());
+            return list;
         } catch (IOException e) {
             e.printStackTrace();
         }

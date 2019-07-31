@@ -1,4 +1,3 @@
-das
-das
-das
-daspo
+Stanciu 1234
+Pipi qerty
+max       =      10
